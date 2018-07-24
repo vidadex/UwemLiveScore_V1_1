@@ -38,7 +38,7 @@ public final class QueryUtils {
     /**
      * Query the USGS dataset and return a list of {@link Uwemlivescore} objects.
      */
-    public static List<Uwemlivescore> fetchEarthquakeData(String requestUrl) {
+    public static List<Uwemlivescore> fetchUwemlivescoreData(String requestUrl) {
         // Create URL object
         URL url = createUrl(requestUrl);
 
@@ -164,23 +164,23 @@ public final class QueryUtils {
             for (int i = 0; i < uwemlivescoreArray.length(); i++) {
 
                 // Get a single earthquake at position i within the list of earthquakes
-                JSONObject currentEarthquake = uwemlivescoreArray.getJSONObject(i);
+                JSONObject currentUwemlivescore = uwemlivescoreArray.getJSONObject(i);
 
 
                 // Extract the value for the key called "mag"
-                String leagueName = currentEarthquake.getString("league_name");
+                String leagueName = currentUwemlivescore.getString("league_name");
 
                 // Extract the value for the key called "time"
-                String time = currentEarthquake.getString("time");
+                String time = currentUwemlivescore.getString("time");
 
                 // Extract the value for the key called "time"
-                String homename = currentEarthquake.getString("home_name");
+                String homename = currentUwemlivescore.getString("home_name");
 
                 // Extract the value for the key called "place"
-                String scores = currentEarthquake.getString("score");
+                String scores = currentUwemlivescore.getString("score");
 
                 // Extract the value for the key called "time"
-                String awayname = currentEarthquake.getString("away_name");
+                String awayname = currentUwemlivescore.getString("away_name");
 
 
                 // Create a new {@link Earthquake} object with the magnitude, location, time,

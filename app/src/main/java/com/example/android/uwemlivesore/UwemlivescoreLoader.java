@@ -46,7 +46,7 @@ public class UwemlivescoreLoader extends AsyncTaskLoader<List<Uwemlivescore>> {
         }
 
         // Perform the network request, parse the response, and extract a list of earthquakes.
-        List<Uwemlivescore> uwemlivescores = QueryUtils.fetchEarthquakeData(mUrl);
+        List<Uwemlivescore> uwemlivescores = QueryUtils.fetchUwemlivescoreData(mUrl);
         return uwemlivescores;
     }
 }
